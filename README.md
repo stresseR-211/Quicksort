@@ -1,5 +1,5 @@
 # Quicksort
-A quicksort visualizer written in Rust using SDL2
+A quicksort visualizer written in Rust using SDL2.
 ___
 ### How to use this program:
 - Click the big Q to sort. If you happen to have a keyboard, you can press the Q button there instead.
