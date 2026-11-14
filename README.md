@@ -6,10 +6,12 @@ ___
 - Click the "Shuffle" button to shuffle the array. If you don't have a mouse, you can click the S button on your keyboard.
 - Drag the slider to set the sorting speed. Alternatively, you can adjust it using arrows. On Android, pushing volume up/down buttons also works.
 - Click Esc to exit.
-### Supported platforms:
-- Windows XP SP3
-- Linux
-- Android (via Termux)
+### System requirements:
+- 800x600 display
+- OS:
+- - Windows XP SP3
+- - Linux (any idk)
+- - Android (via Termux)
 
 *status: infdev*
 ___

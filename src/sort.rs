@@ -1,3 +1,5 @@
+use rand::seq::SliceRandom;
+pub mod ui;
 fn partition(a: &mut Vec<i32>, lo: usize, hi: usize) -> usize {
 	let pivot = a[hi];
 	let mut i = lo;
@@ -19,7 +21,10 @@ fn _qsort(a: &mut Vec<i32>, lo: usize, hi: usize) -> () {
 	_qsort(a, pivot + 1, hi);
 }
 pub fn quicksort(array: &mut Vec<i32>) -> () {
-	_qsort(array, 0, array.len()-1);
+	_qsort(array, 0, array.len() - 1);
+	println!("quicksorted: {}", array);
 }
 pub fn shuffle(array: &mut Vec<i32>) -> () {
+	array.shuffle(&mut rand::thread_rng());
+	println!("shuffled: {}", array);
 }
