@@ -1,4 +1,4 @@
-struct column {
+pub struct column {
 	height: i8;
 	width: i8;
 	blocksize: i16;
@@ -9,16 +9,16 @@ trait column_t {
 	fn move(to: i16) -> ()
 	fn switch_colour() -> ()
 };
-struct button {
+pub struct button {
 	height: i16;
 	width: i16;
 	hovered: bool;
 	held: bool;
 	func: fn() -> ();
 };
-impl button_t {
-	fn resize()
-	fn onHover() -> ()
-	fn onClick() -> ()
-	fn onRelease() -> ()
+trait button_t {
+	fn resize();
+	fn onHover() -> ();
+	fn onClick() -> ();
+	fn onRelease() -> ();
 };

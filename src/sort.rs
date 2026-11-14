@@ -1,4 +1,3 @@
-pub mod ui;
 fn partition(a: &mut Vec<i32>, lo: usize, hi: usize) -> usize {
 	let pivot = a[hi];
 	let mut i = lo;
@@ -22,4 +21,5 @@ fn _qsort(a: &mut Vec<i32>, lo: usize, hi: usize) -> () {
 pub fn quicksort(array: &mut Vec<i32>) -> () {
 	_qsort(array, 0, array.len()-1);
 }
-pub fn shuffle(array &mut Vec<i32>) -> () {}
+pub fn shuffle(array: &mut Vec<i32>) -> () {
+}
