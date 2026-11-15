@@ -11,7 +11,6 @@ pub struct column {
 pub trait column_t {
 	fn new(rect: Rect) -> Self;
 	fn draw(&self, canvas: &mut Canvas<Window>) -> Result<(), String>;
-	fn move_to(&mut self, to: i32) -> ();
 	fn switch_colour(&mut self) -> ();
 }
 impl column_t for column {
@@ -25,10 +24,6 @@ impl column_t for column {
 	fn draw(&self, canvas: &mut Canvas<Window>) -> Result<(), String> {
 		canvas.set_draw_color(self.colour);
 		canvas.fill_rect(self.rect)
-	}
-	fn move_to(&mut self, to: i32) -> () {
-		let offset = self.rect.width() as i32 + self.leftpad;
-		self.rect.set_x(offset * to);
 	}
 	fn switch_colour(&mut self) -> () {
 		self.colour = if self.colour == Color::RGB(255, 255, 255) {
