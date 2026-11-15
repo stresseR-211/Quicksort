@@ -1,5 +1,5 @@
 use rand::seq::SliceRandom;
-pub mod ui;
+use crate::ui;
 fn partition(a: &mut Vec<i32>, lo: usize, hi: usize) -> usize {
 	let pivot = a[hi];
 	let mut i = lo;
@@ -17,14 +17,16 @@ fn _qsort(a: &mut Vec<i32>, lo: usize, hi: usize) -> () {
 		return;
 	}
 	let pivot = partition(a, lo, hi);
-	_qsort(a, lo, pivot - 1);
+	if pivot > lo {
+		_qsort(a, lo, pivot - 1);
+	}
 	_qsort(a, pivot + 1, hi);
 }
 pub fn quicksort(array: &mut Vec<i32>) -> () {
 	_qsort(array, 0, array.len() - 1);
-	println!("quicksorted: {}", array);
+	println!("quicksorted: {:?}", array);
 }
 pub fn shuffle(array: &mut Vec<i32>) -> () {
 	array.shuffle(&mut rand::thread_rng());
-	println!("shuffled: {}", array);
+	println!("shuffled: {:?}", array);
 }
