@@ -4,7 +4,7 @@ ___
 ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-%233DDC84.svg?style=for-the-badge&logo=android&logoColor=white)
 ___
-### How to use this program:
+### How to use this uselessness:
 - Click the big Q to sort. If you happen to have a keyboard, you can press the Q button there instead.
 - Click the "Shuffle" button to shuffle the array. If you don't have a mouse, you can click the S button on your keyboard.
 - ~~Drag the slider to set the sorting speed. Alternatively, you can adjust it using arrows. On Android, pushing volume up/down buttons also works.~~
@@ -16,6 +16,6 @@ ___
 	- ~~Linux (any idk)~~
 	- Android (via Termux and Termux:X11)
 
-*status: alpha*
+*status: NVM IT DOESN'T WORK I HATE MYSELF. THE PROJECT IS ABANDONED.*
 ___
 # NO AI WAS USED DURING THE DEVELOPMENT. #FUCKAI
