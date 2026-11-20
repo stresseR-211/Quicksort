@@ -1,7 +1,7 @@
 use rand::seq::SliceRandom;
 use std::collections::VecDeque;
-pub type steps_deque = VecDeque<(usize, usize)>;
-fn partition(a: &mut Vec<i32>, lo: usize, hi: usize, steps: &mut steps_deque) -> usize {
+pub type StepsDeque = VecDeque<(usize, usize)>;
+fn partition(a: &mut Vec<i32>, lo: usize, hi: usize, steps: &mut StepsDeque) -> usize {
 	let pivot = a[hi];
 	let mut i = lo;
 	for j in lo..hi {
@@ -19,29 +19,34 @@ fn partition(a: &mut Vec<i32>, lo: usize, hi: usize, steps: &mut steps_deque) ->
 	}
 	i
 }
-fn _qsort(a: &mut Vec<i32>, lo: usize, hi: usize, steps: &mut steps_deque) -> () {
+fn qsort_steps(a: &mut Vec<i32>, lo: usize, hi: usize, steps: &mut StepsDeque) {
 	if lo >= hi {
 		return;
 	}
 	let p = partition(a, lo, hi, steps);
 	if p > lo {
-		_qsort(a, lo, p - 1, steps);
+		qsort_steps(a, lo, p - 1, steps);
 	}
-	_qsort(a, p + 1, hi, steps);
+	qsort_steps(a, p + 1, hi, steps);
 }
-pub fn quicksort(array: &mut Vec<i32>) -> steps_deque {
-	let mut steps = steps_deque::new();
+
+pub fn quicksort(array: &Vec<i32>) -> StepsDeque {
+	let mut steps = StepsDeque::new();
 	if array.len() > 1 {
-		let hi = array.len() - 1;
-		_qsort(array, 0, hi, &mut steps);
+		let mut work = array.clone();
+		let hi = work.len() - 1;
+		qsort_steps(&mut work, 0, hi, &mut steps);
 	}
-	println!("quicksorted: {:?}", array);
 	steps
 }
-pub fn quicksort_void(array: &mut Vec<i32>) -> () {
-	quicksort(array);
-}
-pub fn shuffle(array: &mut Vec<i32>) -> () {
-	array.shuffle(&mut rand::thread_rng());
-	println!("shuffled: {:?}", array);
+pub fn shuffle(array: &Vec<i32>) -> StepsDeque {
+	let mut steps = StepsDeque::new();
+	let len = array.len();
+	for i in (1..len).rev() {
+		let j = rand::random_range(0..=i);
+		if i != j {
+			steps.push_back((i, j));
+		}
+	}
+	steps
 }

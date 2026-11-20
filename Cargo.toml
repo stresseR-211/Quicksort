@@ -8,4 +8,4 @@ version = "0.37"
 features = ["ttf", "use-pkgconfig"]
 
 [dependencies]
-rand = "0.8"
+rand = "0.10"
